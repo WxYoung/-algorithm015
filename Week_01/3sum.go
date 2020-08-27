@@ -95,11 +95,12 @@ func threeSum3(nums []int) [][]int {
 }
 
 func threeSum(nums []int) [][]int {
-	//暴力解法,不符合要求
+	//暴力解法
 	var m [][]int
 	l := len(nums)
-	for i := 0; i < l; i++ {
-		for j := i + 1; j < l; j++ {
+	sort.Ints(nums)
+	for i := 0; i < l - 2; i++ {
+		for j := i + 1; j < l - 1; j++ {
 			for k := j + 1; k < l; k++ {
 				if nums[i]+nums[j]+nums[k] == 0 {
 					m = append(m, []int{nums[i], nums[j], nums[k]})
